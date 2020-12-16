@@ -1,0 +1,14 @@
+<<DRIVER PROGRAM>>
+start
+	declare m, temp:integer;	
+	declare A, B, C: array[6..10] of integer;
+	get_value(A);
+	get_value(B);
+	for(m in 6..10)
+        start
+		temp:= A[m]+B[m];
+		print(temp);
+		C[m]:= temp;
+	end
+	print(C);
+end

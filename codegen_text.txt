@@ -1,0 +1,10 @@
+SECTION .text
+MOD1:        ;Function begins	mov     dword [rbp-0], edi
+	mov     outreg0, dword [rbp-8]
+	mov     outreg1, dword [rbp-0]
+	mov     eax, expreg
+
+	mov     dword [rbp-0], eax
+	leave
+	ret
+; MOD1 End of function

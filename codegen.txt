@@ -1,0 +1,4 @@
+default rel
+
+global main: 
+global MOD1: function

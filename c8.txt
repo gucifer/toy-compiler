@@ -1,0 +1,21 @@
+<<DRIVER PROGRAM>>
+start
+	declare x, y, z:integer;
+	declare b: boolean;
+	get_value(x);
+	y:= 19;
+	z:= 56;
+	switch(x)
+	start
+		case 1: y:= x*2-y;
+			print(y);
+                        break;
+		case 2: z:= x*3-z;
+			print(z);
+                        break;
+		default:print(x);
+			break;
+	end
+	print(y);
+	print(z);
+end

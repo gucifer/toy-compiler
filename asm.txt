@@ -1,0 +1,47 @@
+//printing stuff
+	mov eax,4
+	mov ebx,1
+	mov ecx,hello
+	mov edx,helloLen
+	int 80h
+SECTION .data
+        hello:     db 'Hello world!',10
+        helloLen:  equ $-hello
+//second printing for priting stuff in ecx
+        mov     esi, ecx
+        lea     rdi, [rel ?_001]
+        mov     eax, 0
+        call    printf   
+SECTION .rodata                      ; section number 4, const
+
+?_001:                                                  ; byte
+        db 25H, 64H, 00H                                ; 0000 _ %d.
+//for loop :: ECX register contains the loop count
+mov ECX,10
+l1:
+<loop body>
+loop l1
+//secondary way for doing for loop
+MOV	CL, 10
+L1:
+<LOOP-BODY>
+DEC	CL
+JNZ	L1
+//while also done the same way
+//functions eax ecx and edx are our return values
+//edi esi edx are our arguments
+       mov     edx, dword [rbp-8H]                     ; 0057 _ 8B. 55, F8
+        push    rdx                                     ; 005A _ 52
+        mov     r9d, 1                                  ; 005B _ 41: B9, 00000001
+        mov     r8d, 1                                  ; 0061 _ 41: B8, 00000001
+        mov     ecx, 1                                  ; 0067 _ B9, 00000001
+        mov     edx, 1                                  ; 006C _ BA, 00000001
+        mov     esi, 1                                  ; 0071 _ BE, 00000001
+        mov     edi, eax                                ; 0076 _ 89. C7
+        call    x   
+//switch case
+cmp register,value
+jz label for that value
+cmp register,nextvalue
+jz label for that value
+jmp default label
